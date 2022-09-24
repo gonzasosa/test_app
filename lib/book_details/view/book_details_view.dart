@@ -30,6 +30,7 @@ class BookDetailsView extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+          Text('Book id: ${book.id}'),
           const SizedBox(height: 16),
           Text('Book name: ${book.name}'),
         ],

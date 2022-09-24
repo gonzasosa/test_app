@@ -1,7 +1,7 @@
 import 'package:api_client/api_client.dart';
 import 'package:book_repository/book_repository.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:test/test.dart';
 
 class MockApiClient extends Mock implements ApiClient {}
 

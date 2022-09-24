@@ -9,9 +9,9 @@ environment:
 dependencies:
   api_client:
     path: ../api_client
-  equatable: ^2.0.3
+  equatable: ^2.0.5
+
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   mocktail: ^0.3.0
-  flutter_lints: ^2.0.0
+  test: ^1.21.6
+  very_good_analysis: ^3.1.0

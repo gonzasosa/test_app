@@ -1,6 +1,6 @@
 import 'package:api_client/api_client.dart';
-import 'package:equatable/equatable.dart';
 import 'package:book_repository/book_repository.dart';
+import 'package:equatable/equatable.dart';
 
 /// {@template book_exception}
 /// Base class for all [BookRepository]'s [Exception]s.
@@ -22,7 +22,11 @@ abstract class BookException extends Equatable implements Exception {
   List<Object?> get props => [error, stackTrace];
 }
 
+/// {@template fetch_book_by_id_failure}
+/// Exception thrown when [BookRepository.fetchBookById] fails.
+/// {@endtemplate}
 class FetchBookByIdFailure extends BookException {
+  /// {@macro fetch_book_by_id_failure}
   const FetchBookByIdFailure({
     required super.error,
     required super.stackTrace,
@@ -45,8 +49,8 @@ class BookRepository {
     try {
       final response = await _apiClient.bookResource.fetchBookById(id);
       return Book(
-        id: response['id'],
-        name: response['name'],
+        id: response['id'] as int,
+        name: response['name'] as String,
       );
     } catch (error, stackTrace) {
       throw FetchBookByIdFailure(

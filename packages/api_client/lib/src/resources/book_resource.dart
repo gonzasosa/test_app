@@ -1,5 +1,5 @@
 /// {@template book_resource}
-/// Resource for interacting with Books.
+/// Resource exposing endpoints related to the Book.
 /// {@endtemplate}
 class BookResource {
   /// {@macro book_resource}
